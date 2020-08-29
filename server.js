@@ -1,5 +1,6 @@
 const express = require('express');
 const welcomeRouter = require('./routes/welcomeRouter');
+const recipeRouter = require('./routes/recipeRouter');
 const error = require('./middleware/error');
 const colors = require('colors');
 
@@ -9,6 +10,7 @@ server.use(express.json());
 
 // API Routes
 server.use(welcomeRouter);
+server.use('/api/recipes', recipeRouter);
 
 // Error MiddleWare
 server.use(error);
